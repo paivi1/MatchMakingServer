@@ -12,7 +12,7 @@ class ClientHandler extends Thread
     final Player player2;
     String board[] = new String[9];
     static int turn;
-    static int counter = 0;
+    int counter = 0;
     
     // Constructor assigns players and their respective input/outputs
     public ClientHandler(Player client1, DataInputStream dis1, DataOutputStream dos1, Player client2,DataInputStream dis2, DataOutputStream dos2)  
@@ -132,8 +132,6 @@ class ClientHandler extends Thread
         
         }catch(IOException e){
             e.printStackTrace();
-        }catch (EOFException e){
-            return;
         }
         
     }
